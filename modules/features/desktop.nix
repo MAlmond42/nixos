@@ -37,13 +37,6 @@
 
     security.polkit.enable = true;
 
-    hardware = {
-      enableAllFirmware = true;
-
-      opengl = {
-        enable = true;
-        driSupport32Bit = true;
-      };
-    };
+    hardware.enableAllFirmware = true;
   };
 }
