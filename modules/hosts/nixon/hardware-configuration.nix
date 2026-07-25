@@ -1,5 +1,5 @@
 {
-  nixosModules.nixonConfiguration = {
+  flake.nixosModules.nixonConfiguration = {
     config,
     lib,
     pkgs,

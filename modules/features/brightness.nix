@@ -1,5 +1,5 @@
 {
-  nixosModules.brightness = {pkgs, ...}: {
+  flake.nixosModules.brightness = {pkgs, ...}: {
     programs.brightnessctl.enable = true;
 
     services.actkbd = {
