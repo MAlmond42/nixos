@@ -1,4 +1,6 @@
 {
+  description = "Dendritic Nix-Flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -27,7 +29,11 @@
     importTree = path:
       toList (fileFilter isNixModule path);
 
-    mkFlake = inputs.flake-parts.lib.mkFlake {inherit inputs;};
+    mkFlake = inputs.flake-parts.lib.mkFlake {
+      inherit inputs;
+    };
   in
-    mkFlake {imports = importTree ./.;};
+    mkFlake {
+      imports = importTree ./.;
+    };
 }

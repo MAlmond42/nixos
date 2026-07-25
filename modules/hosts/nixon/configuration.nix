@@ -3,16 +3,21 @@
   inputs,
   ...
 }: {
+  flake.nixosConfigurations.nixon = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.nixonConfiguration
+    ];
+  };
+
   flake.nixosModules.nixonConfiguration = {
     pkgs,
     lib,
     ...
   }: {
     imports = [
-      self.nixosModules.nixonHardware
-      inputs.home-manager.nixosModules.default
+      self.nixosModules.desktop
 
-      self.nixosModules.niri
+      inputs.home-manager.nixosModules.default
     ];
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -57,8 +62,6 @@
         pd.enable = true;
       };
     };
-
-    programs.niri.enable = true;
 
     hardware = {
       graphics = {
