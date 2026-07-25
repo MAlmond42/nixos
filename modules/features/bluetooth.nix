@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.bluetooth = {pkgs, ...}: {
+  nixosModules.bluetooth = {pkgs, ...}: {
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;

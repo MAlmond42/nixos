@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.desktop = {pkgs, ...}: {
+  nixosModules.desktop = {pkgs, ...}: {
     import = [
       self.nixosModules.audio
       self.nixosModules.bluetooth

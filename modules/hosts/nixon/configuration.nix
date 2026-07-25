@@ -3,13 +3,13 @@
   inputs,
   ...
 }: {
-  flake.nixosConfigurations.nixon = inputs.nixpkgs.lib.nixosSystem {
+  nixosConfigurations.nixon = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.nixonConfiguration
     ];
   };
 
-  flake.nixosModules.nixonConfiguration = {
+  nixosModules.nixonConfiguration = {
     pkgs,
     lib,
     ...
