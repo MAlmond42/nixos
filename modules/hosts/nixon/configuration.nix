@@ -51,6 +51,11 @@
       flatpak.enable = true;
       udisks2.enable = true;
       printing.enable = true;
+
+      tlp = {
+        enable = true;
+        pd.enable = true;
+      };
     };
 
     programs.niri.enable = true;
