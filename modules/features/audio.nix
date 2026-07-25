@@ -12,6 +12,8 @@
       jack.enable = true;
     };
 
-    programs.pwvucontrol.enable = true;
+    environment.systemPackages = [
+      pkgs.pwvucontrol
+    ];
   };
 }

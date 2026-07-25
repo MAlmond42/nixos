@@ -1,6 +1,8 @@
 {
   flake.nixosModules.brightness = {pkgs, ...}: {
-    programs.brightnessctl.enable = true;
+    environment.systemPackages = [
+      pkgs.brightnessctl
+    ];
 
     services.actkbd = {
       enable = true;
