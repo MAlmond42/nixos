@@ -16,7 +16,7 @@
 
     programs = {
       niri.enable = true;
-      nvim.enable = true;
+      neovim.enable = true;
     };
 
     services.xserver.displayManager.lightdm.enable = true;
