@@ -27,6 +27,8 @@
 
         prefer-no-csd = null;
 
+        spawn-at-startup = [(lib.getExe self'.packages.myNoctalia)];
+
         input = {
           keyboard = {
             xkb = {
