@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.nixosModules.users = {
+  flake.nixosModules.users = {pkgs, ...}: {
     users.users.mats = {
       isNormalUser = true;
       shell = pkgs.fish;
