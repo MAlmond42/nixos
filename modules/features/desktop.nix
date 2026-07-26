@@ -19,8 +19,10 @@
       neovim.enable = true;
     };
 
-    services.xserver.displayManager.lightdm.enable = true;
-
+    services.xserver = {
+      enable = true;
+      displayManager.lightdm.enable = true;
+    };
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       corefonts
