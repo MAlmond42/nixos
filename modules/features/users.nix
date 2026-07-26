@@ -6,6 +6,6 @@
       extraGroups = ["wheel" "networkmanager"];
       initialPassword = "12345";
     };
-    home-manager.users.mats = self.homeModules.mats;
+    #home-manager.users.mats = self.homeModules.mats;
   };
 }
