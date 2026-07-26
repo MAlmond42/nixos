@@ -17,6 +17,7 @@
     programs = {
       niri.enable = true;
       neovim.enable = true;
+      fish.enable = true;
     };
 
     services.xserver = {
