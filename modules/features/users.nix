@@ -1,4 +1,4 @@
-{
+{self, ...}: {
   flake.nixosModules.users = {
     users.users.mats = {
       isNormalUser = true;
