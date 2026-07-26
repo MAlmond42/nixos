@@ -8,9 +8,17 @@
 
     environment.systemPackages = [
       #selfpkgs.terminal
+      pkgs.ghostty
       pkgs.pcmanfm
       #selfpkgs.noctalia-shell
     ];
+
+    programs = {
+      niri.enable = true;
+      nvim.enable = true;
+    };
+
+    services.xserver.displayManager.lightdm.enable = true;
 
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
