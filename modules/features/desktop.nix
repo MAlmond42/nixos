@@ -10,6 +10,7 @@
       #selfpkgs.terminal
       pkgs.ghostty
       pkgs.pcmanfm
+      pkgs.git
       #selfpkgs.noctalia-shell
     ];
 
