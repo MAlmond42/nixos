@@ -40,7 +40,7 @@
         };
       };
 
-      kernelParams = ["quiet"];
+      kernelParams = ["quiet" "splash"];
       kernelModules = ["mt7921e"];
 
       plymouth.enable = true;
