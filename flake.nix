@@ -1,39 +1,40 @@
 {
-  description = "Dendritic Nix-Flake";
+    description = "Dendritic Nix-Flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
+        flake-parts.url = "github:hercules-ci/flake-parts";
+        import-tree.url = "github:vic/import-tree";
 
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+        wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+        home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        stylix.url = "github:nix-community/stylix";
     };
 
-    stylix.url = "github:nix-community/stylix";
-  };
+    outputs = inputs: let
+        inherit (inputs.nixpkgs) lib;
+        inherit (lib.fileset) toList fileFilter;
 
-  outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
-    inherit (lib.fileset) toList fileFilter;
+        isNixModule = file:
+            file.hasExt "nix"
+            && file.name != "flake.nix"
+            && !lib.hasPrefix "_" file.name;
 
-    isNixModule = file:
-      file.hasExt "nix"
-      && file.name != "flake.nix"
-      && !lib.hasPrefix "_" file.name;
+        importTree = path:
+            toList (fileFilter isNixModule path);
 
-    importTree = path:
-      toList (fileFilter isNixModule path);
-
-    mkFlake = inputs.flake-parts.lib.mkFlake {
-      inherit inputs;
-    };
-  in
-    mkFlake {
-      imports = importTree ./.;
-    };
+        mkFlake = inputs.flake-parts.lib.mkFlake {
+            inherit inputs;
+        };
+    in
+        mkFlake {
+            imports = importTree ./.;
+        };
 }
