@@ -4,6 +4,7 @@
             self.nixosModules.audio
             self.nixosModules.bluetooth
             self.nixosModules.brightness
+            self.nixosModules.ssh
         ];
 
         environment.systemPackages = [
@@ -18,6 +19,7 @@
             niri.enable = true;
             neovim.enable = true;
             fish.enable = true;
+            localsend.enable = true;
         };
 
         services.xserver = {
