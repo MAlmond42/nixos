@@ -27,7 +27,7 @@ inputs,
 
                     prefer-no-csd = null;
 
-                    spawn-at-startup = [(lib.getExe self'.packages.myNoctalia)];
+                    spawn-sh-at-startup = lib.getExe pkgs.noctalia;
 
                     input = {
                         keyboard = {
@@ -172,7 +172,7 @@ inputs,
                         "Mod+Shift+Return".show-hotkey-overlay = null;
                         "Mod+Q".close-window = null;
                         "Mod+O".toggle-overview = null;
-                        "Mod+Space".spawn-sh = "rofi -show drun";
+                        "Mod+Space".spawn-sh = "";
                         "Mod+W".spawn-sh = "wlr-which-key";
 
                         XF86AudioRaiseVolume = _: {

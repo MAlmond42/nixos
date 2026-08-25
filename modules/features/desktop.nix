@@ -5,6 +5,7 @@
             self.nixosModules.bluetooth
             self.nixosModules.brightness
             self.nixosModules.ssh
+            self.nixosModules.noctalia
         ];
 
         environment.systemPackages = [

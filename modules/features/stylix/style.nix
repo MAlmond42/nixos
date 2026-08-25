@@ -35,4 +35,8 @@
             targets.grub.useWallpaper = true;
         };
     };
+
+    flake.homeModules.stylix = {pkgs, ...}: {
+        stylix.enable = true;
+    };
 }

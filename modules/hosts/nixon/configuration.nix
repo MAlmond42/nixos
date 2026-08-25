@@ -17,7 +17,7 @@ inputs,
             imports = [
                 self.nixosModules.desktop
 
-                self.nixosModules.users
+                self.nixosModules.mats
 
                 inputs.home-manager.nixosModules.default
             ];

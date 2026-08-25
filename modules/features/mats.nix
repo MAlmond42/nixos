@@ -11,7 +11,9 @@
     };
 
     flake.homeModules.mats = {pkgs, ...}: {
-        import = [];
+        import = [
+            self.homeModules.stylix
+        ];
 
         home = {
             username = "mats";
