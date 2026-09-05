@@ -27,7 +27,7 @@ inputs,
 
                     prefer-no-csd = null;
 
-                    spawn-sh-at-startup = lib.getExe pkgs.noctalia;
+                    spawn-sh-at-startup = ["noctalia"]; #lib.getExe pkgs.noctalia
 
                     input = {
                         keyboard = {

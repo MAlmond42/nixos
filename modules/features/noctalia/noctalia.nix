@@ -8,7 +8,7 @@
     flake.homeModules.noctalia = {pkgs, ...}: {
         home.file = {
             ".local/state/noctalia/settings.toml" = {
-                source = config.lib.file.mkOutOfStoreSymlink ./settings.toml;
+                source = ./settings.toml;
             };
         };
     };

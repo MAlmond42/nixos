@@ -1,8 +1,12 @@
-{config, ...}: {
+{config, inputs, ...}: {
     flake.nixosModules.stylix = {pkgs, ...}: {
+        imports = [
+            inputs.stylix.nixosModules.stylix
+        ];
+
         stylix = {
             enable = true;
-            stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest.yaml";
+            base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest.yaml";
             image = ./bridge_bus.jpg;
             polarity = "dark";
 
@@ -19,12 +23,16 @@
                     package = pkgs.google-fonts;
                     name = "Old Standard TT";
                 };
-                sansSerif = config.stylix.fonts.monospace;
+                sansSerif = {
+                    package = pkgs.google-fonts;
+                    name = "Fira Sans";
+                };
             };
 
             cursor = {
                 package = pkgs.bibata-cursors;
                 name = "Bibata Modern Classic";
+                size = 24;
             };
 
             icons = {

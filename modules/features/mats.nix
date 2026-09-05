@@ -21,8 +21,6 @@
             homeDirectory = "/home/mats";
         };
 
-        nixpkgs.config.allowUnfree = true;
-
         home.stateVersion = "26.05";
     };
 }
