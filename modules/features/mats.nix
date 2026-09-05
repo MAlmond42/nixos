@@ -1,4 +1,4 @@
-{self, inputs, ...}: {
+{self, ...}: {
     flake.nixosModules.mats = {pkgs, ...}: {
         users.users.mats = {
             isNormalUser = true;
@@ -11,8 +11,9 @@
     };
 
     flake.homeModules.mats = {pkgs, ...}: {
-        import = [
+        imports = [
             self.homeModules.stylix
+            self.homeModules.noctalia
         ];
 
         home = {
@@ -21,5 +22,7 @@
         };
 
         nixpkgs.config.allowUnfree = true;
+
+        home.stateVersion = "26.05";
     };
 }

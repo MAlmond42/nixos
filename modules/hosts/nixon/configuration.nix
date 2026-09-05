@@ -19,7 +19,7 @@ inputs,
 
                 self.nixosModules.mats
 
-                inputs.home-manager.nixosModules.default
+                self.nixosModules.homeManager
             ];
 
             nix.settings.experimental-features = ["nix-command" "flakes"];

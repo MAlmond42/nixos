@@ -1,6 +1,8 @@
 {self, ...}: {
     flake.nixosModules.desktop = {pkgs, ...}: {
         imports = [
+            self.nixosModules.stylix
+
             self.nixosModules.audio
             self.nixosModules.bluetooth
             self.nixosModules.brightness
@@ -32,6 +34,7 @@
             corefonts
             unifont
             dejavu_fonts
+            google-fonts
         ];
 
         time.timeZone = "Europe/Berlin";

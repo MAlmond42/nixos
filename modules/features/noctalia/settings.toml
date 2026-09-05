@@ -1,0 +1,497 @@
+config_version = 12
+
+[bar.default]
+background_opacity = 0.84999998100101948
+border = "surface"
+center = [ "workspaces" ]
+contact_shadow = true
+end = [
+    "notifications",
+    "widget",
+    "bar",
+    "clipboard",
+    "network",
+    "bluetooth",
+    "cpu",
+    "ram",
+    "temp",
+    "power_profile",
+    "battery",
+    "settings",
+    "session"
+]
+font_family = "JetBrainsMono Nerd Font"
+font_weight = 600
+hover_highlight = false
+margin_edge = 0
+margin_ends = 0
+radius = 0
+radius_bottom_left = 15
+radius_bottom_right = 15
+radius_top_left = 0
+start = [ "control-center", "clock", "weather", "brightness", "volume", "caffeine", "active_window" ]
+thickness = 35
+widget_spacing = 15
+
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
+warning_threshold = 10
+
+[calendar]
+enabled = true
+
+    [calendar.account.icloud]
+    color = "primary"
+    name = "Calendar"
+    provider = "icloud"
+    type = "caldav"
+    username = "matsmandel@icloud.com"
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "audio"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000005",
+    "desktop-widget-0000000000000006",
+    "desktop-widget-0000000000000007",
+    "desktop-widget-0000000000000008",
+    "desktop-widget-0000000000000009"
+]
+
+    [desktop_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 272.0
+    box_width = 304.0
+    cx = 2408.0
+    cy = 184.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        background_opacity = 1.0
+        color = "secondary"
+        font_family = "JetBrainsMono NF ExtraBold"
+        forecast_days = 3
+        shadow = false
+        show_forecast = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1280.0
+    cy = 517.5
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = false
+        clock_style = "digital"
+        color = "secondary"
+        shadow = false
+        timezone = "Europe/Berlin"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 496.0
+    box_width = 752.0
+    cx = 1280.0
+    cy = 728.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background_color = "on_primary"
+        background_opacity = 1.0
+        opacity = 1.0
+        title = ""
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1280.0
+    cy = 625.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "media_player"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        background = false
+        color = "secondary"
+        shadow = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 32.0
+    box_width = 96.0
+    cx = 960.0
+    cy = 581.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        background = false
+        color = "secondary"
+        display = "gauge"
+        shadow = false
+        show_label = true
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000006]
+    box_height = 32.0
+    box_width = 112.0
+    cx = 1064.0
+    cy = 581.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
+        background = false
+        color = "secondary"
+        display = "gauge"
+        shadow = false
+        show_label = true
+        stat = "cpu_temp"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000007]
+    box_height = 32.0
+    box_width = 112.0
+    cx = 960.0
+    cy = 613.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000007.settings]
+        background = false
+        color = "secondary"
+        display = "gauge"
+        shadow = false
+        show_label = true
+        stat = "gpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000008]
+    box_height = 32.0
+    box_width = 112.0
+    cx = 1056.0
+    cy = 613.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000008.settings]
+        background = false
+        color = "secondary"
+        display = "gauge"
+        shadow = false
+        show_label = true
+        stat = "ram_pct"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000009]
+    box_height = 112.0
+    box_width = 192.0
+    cx = 1016.0
+    cy = 696.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000009.settings]
+        background = false
+        color = "secondary"
+        color2 = "tertiary"
+        display = "graph"
+        network_speed_compact = false
+        shadow = false
+        show_label = true
+        stat = "net_rx"
+        stat2 = "net_tx"
+
+[dock]
+reserve_space = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660
+
+[location]
+address = "Uelzen, Germany"
+auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.29999999329447746
+monitors = [ "eDP-1" ]
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000005"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1008.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 800.0
+    cy = 823.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "on_primary"
+        background_opacity = 0.0
+        background_radius = 12.0
+        center_password_text = true
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1263.0
+    cy = 240.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 96.0
+    box_width = 336.0
+    cx = 1280.0
+    cy = 335.5
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "weather"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1280.0
+    cy = 720.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 320.0
+    box_width = 368.0
+    cx = 800.0
+    cy = 276.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        clock_style = "digital"
+        color = "secondary"
+        font_family = ""
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 176.0
+    box_width = 256.0
+    cx = 128.0
+    cy = 88.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+        color = "on_primary"
+        shadow = false
+        show_forecast = true
+
+[nightlight]
+enabled = true
+
+[notification]
+layer = "overlay"
+
+[plugin_settings."avivbintangaringga/nix-monitor"]
+show_update_available_notification = false
+update_command = "cd /etc/nixos && nix flake update && sudo nixos-rebuild switch && cd /home/mats/.config/home-manager && nix flake update && home-manager switch"
+
+[plugins]
+enabled = [
+    "noctalia/bitwarden",
+    "yuuto/calculator",
+    "avivbintangaringga/nix-monitor",
+    "thepunkoff/pomodoro",
+    "yocraft/battery-widget"
+]
+
+[shell]
+avatar_path = "/home/mats/.face"
+font_family = "JetBrainsMono Nerd Font"
+polkit_agent = true
+
+    [shell.launcher]
+    compact = true
+
+    [shell.panel]
+    clipboard_placement = "floating"
+    control_center_placement = "floating"
+    launcher_compact = true
+    session_placement = "centered"
+    transparency_mode = "glass"
+    wallpaper_placement = "floating"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 15
+
+    [shell.screenshot]
+    directory = "~/Pictures/Screenshots/"
+
+[theme]
+builtin = "Tokyo-Night"
+community_palette = "Everforest"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/mats/Pictures/Wallpapers"
+transition = [ "disc" ]
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/mats/Pictures/Wallpapers/bridge_bus.jpg"
+
+    [wallpaper.last]
+    path = "/home/mats/Pictures/Wallpapers/bridge_bus.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/mats/Pictures/Wallpapers/bridge_bus.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/mats/Pictures/Wallpapers/bridge_bus.jpg"
+
+    [[wallpaper.favorite]]
+    community_palette = "Everforest"
+    palette_source = "community"
+    path = "/home/mats/Pictures/Wallpapers/bridge_bus.jpg"
+    theme_mode = "dark"
+
+[widget.active_window]
+title_scroll = "on_hover"
+
+[widget.bar]
+type = "yuuto/calculator:bar"
+
+[widget.cat]
+audio_spectrum = true
+capsule_radius = "auto"
+tappy_mode = true
+type = "noctalia/bongocat:cat"
+
+[widget.control-center]
+capsule_radius = "auto"
+custom_image_colorize = true
+glyph = "snowflake"
+
+[widget.widget]
+type = "thepunkoff/pomodoro:widget"
+
+[widget.workspaces]
+show_labels = false

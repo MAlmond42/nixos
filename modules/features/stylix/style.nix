@@ -1,5 +1,4 @@
-{config, ...}:
-{
+{config, ...}: {
     flake.nixosModules.stylix = {pkgs, ...}: {
         stylix = {
             enable = true;
@@ -9,14 +8,17 @@
 
             fonts = {
                 monospace = {
-                    package = pkgs.nerd-fonts-jetbrains-mono;
+                    package = pkgs.nerd-fonts.jetbrains-mono;
                     name = "JetBrainsMono Nerd Font";
                 };
                 emoji = {
                     package = pkgs.noto-fonts-color-emoji;
                     name = "Noto Color Emoji";
                 };
-                serif = config.stylix.fonts.monospace;
+                serif = {
+                    package = pkgs.google-fonts;
+                    name = "Old Standard TT";
+                };
                 sansSerif = config.stylix.fonts.monospace;
             };
 
