@@ -16,6 +16,7 @@ inputs,
         }: {
             imports = [
                 self.nixosModules.desktop
+                self.nixosModules.gaming
 
                 self.nixosModules.mats
 
@@ -46,6 +47,14 @@ inputs,
                 plymouth.enable = true;
             };
 
+            swapDevices = [
+                {
+                    device = "/var/lib/swapfile";
+                    size = 4 * 1024; # 4 GiB
+                }
+            ];
+
+
             networking = {
                 hostName = "nixon";
                 networkmanager.enable = true;
@@ -60,7 +69,7 @@ inputs,
                 flatpak.enable = true;
                 udisks2.enable = true;
                 printing.enable = true;
-
+                displayManager.lemurs.enable = true;
                 tlp = {
                     enable = true;
                     pd.enable = true;

@@ -1,0 +1,46 @@
+# Theming
+font: JetBrainsMono Nerd Font 12
+background: "#2d353bb3"
+color: "#d3c6aa"
+border: "#a7c080"
+separator: " ➜ "
+border_width: 3
+corner_r: 0
+padding: 15 # Defaults to corner_r
+column_padding: 25 # Defaults to padding
+
+# Anchor and margin
+anchor: center # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+# Only relevant when anchor is not center
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+margin_top: 0
+
+# Permits key bindings that conflict with compositor key bindings.
+# Default is `false`.
+inhibit_compositor_keyboard_shortcuts: true
+
+# Try to guess the correct keyboard layout to use. Default is `false`.
+auto_kbd_layout: true
+
+menu:
+  - key: "f"
+    desc: Browser
+    cmd: flatpak --user run app.zen_browser.zen
+  - key: "m"
+    desc: Mail
+    cmd: thunderbird
+  - key: "e"
+    desc: Explorer
+    cmd: ghostty -e yazi
+  - key: "o"
+    desc: Office
+    cmd: libreoffice
+  - key: "s"
+    desc: Steam
+    cmd: steam
+  - key: "n"
+    desc: Obsidian
+    cmd: obsidian
+

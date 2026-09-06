@@ -2,8 +2,8 @@
     flake.nixosModules.mats = {pkgs, ...}: {
         users.users.mats = {
             isNormalUser = true;
-            shell = pkgs.fish;
-            extraGroups = ["wheel" "networkmanager"];
+            shell = self.packages.${pkgs.stdenv.hostPlatform.system}.fish;
+            extraGroups = ["audio" "input" "networkmanager" "wheel" "seat" "video"];
             initialPassword = "12345";
         };
 
