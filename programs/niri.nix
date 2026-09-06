@@ -119,6 +119,10 @@
 
                 cursor = {
                     xcursor-size = 20;
+                    xcursor-theme = "Bibata Modern Classic";
+
+                    hide-when-typing = [];
+                    hide-after-inactive-ms = 1000;
                 };
 
                 hotkey-overlay = {
