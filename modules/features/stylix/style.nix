@@ -1,4 +1,4 @@
-{config, inputs, ...}: {
+{inputs, ...}: {
     flake.nixosModules.stylix = {pkgs, ...}: {
         imports = [
             inputs.stylix.nixosModules.stylix
@@ -31,18 +31,21 @@
 
             cursor = {
                 package = pkgs.bibata-cursors;
-                name = "Bibata Modern Classic";
-                size = 24;
+                name = "Bibata-Modern-Classic";
+                size = 20;
             };
 
             icons = {
                 enable = true;
                 package = pkgs.papirus-icon-theme;
-                dark = "Papirus Dark";
-                light = "Papirus Light";
+                dark = "Papirus-Dark";
+                light = "Papirus-Light";
             };
 
-            targets.grub.useWallpaper = true;
+            targets = {
+                grub.useWallpaper = true;
+                nvf.enable = false;
+            };
         };
     };
 

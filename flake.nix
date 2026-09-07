@@ -14,6 +14,11 @@
             url = "github:nix-community/home-manager";
         };
 
+        nvf = {
+            url = "github:NotAShelf/nvf";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         stylix.url = "github:nix-community/stylix";
     };
 

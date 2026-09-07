@@ -17,6 +17,7 @@ inputs,
             imports = [
                 self.nixosModules.desktop
                 self.nixosModules.gaming
+                self.nixosModules.apps
 
                 self.nixosModules.mats
 

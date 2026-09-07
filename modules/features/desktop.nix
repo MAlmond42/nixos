@@ -9,6 +9,7 @@
             self.nixosModules.ssh
             self.nixosModules.file-manager
             self.nixosModules.environment
+            self.nixosModules.nvim
 
             self.nixosModules.noctalia
             self.nixosModules.niri
