@@ -121,7 +121,7 @@
 
                 cursor = {
                     xcursor-size = 20;
-                    xcursor-theme = "Bibata Modern Classic";
+                    xcursor-theme = "Bibata-Modern-Classic";
                 };
 
                 hotkey-overlay = {
