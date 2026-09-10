@@ -156,8 +156,18 @@
                             {app-id = "zen";}
                             {app-id = "dev.zed.Zed";}
                             {app-id = "trenchbroom.github.io.trenchbroom";}
+                            {app-id = "firefox";}
                         ];
                         open-maximized = true;
+                    }
+                    {
+                        matches = [
+                            {app-id = "ghostty";}
+                        ];
+                        background-effect = {
+                            blur = true;
+                        };
+                        opacity = 0.85;
                     }
                 ];
 

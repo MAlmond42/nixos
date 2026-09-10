@@ -31,6 +31,7 @@
             neovim.enable = true;
             fish.enable = true;
             localsend.enable = true;
+            firefox.enable = true;
         };
 
         services = {

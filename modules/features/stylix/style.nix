@@ -6,6 +6,7 @@
 
         stylix = {
             enable = true;
+            autoEnable = true;
             base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest.yaml";
             image = ./bridge_bus.jpg;
             polarity = "dark";
@@ -21,7 +22,7 @@
                 };
                 serif = {
                     package = pkgs.google-fonts;
-                    name = "Old Standard TT";
+                    name = "Amiri";
                 };
                 sansSerif = {
                     package = pkgs.google-fonts;
@@ -50,6 +51,13 @@
     };
 
     flake.homeModules.stylix = {pkgs, ...}: {
-        stylix.enable = true;
+        stylix = {
+            enable = true;
+            autoEnable = true;
+            targets = {
+                yazi.enable = true;
+                firefox.colorTheme.enable = true;
+            };
+        };
     };
 }

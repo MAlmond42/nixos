@@ -18,6 +18,7 @@ inputs,
                 self.nixosModules.desktop
                 self.nixosModules.gaming
                 self.nixosModules.apps
+                self.nixosModules.fun
 
                 self.nixosModules.mats
 

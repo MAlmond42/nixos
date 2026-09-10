@@ -27,13 +27,13 @@ auto_kbd_layout: true
 menu:
   - key: "f"
     desc: Browser
-    cmd: flatpak --user run app.zen_browser.zen
+    cmd: firefox
   - key: "m"
     desc: Mail
     cmd: thunderbird
   - key: "e"
     desc: Explorer
-    cmd: ghostty -e yazi
+    cmd: pcmanfm
   - key: "o"
     desc: Office
     cmd: libreoffice

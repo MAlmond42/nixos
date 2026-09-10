@@ -31,7 +31,7 @@
 
         statusline.lualine = {
             enable = false;
-            theme = "everforest";
+            setupOpts.theme = "everforest";
         };
 
         utility = {

@@ -1,7 +1,15 @@
 {self, ...}: {
     flake.nixosModules.environment = {pkgs, ...}: let
-        selfpkgs = self.packages."${pkgs.system}";
+        selfpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
     in {
+        programs = {
+            starship = {
+                enable = true;
+                presets = ["nerd-font-symbols"];
+            };
+            zoxide.enable = true;
+        };
+
         environment.systemPackages = [
             selfpkgs.nh
             selfpkgs.git
@@ -16,7 +24,6 @@
             pkgs.fzf
             pkgs.lazygit
             pkgs.ripgrep
-            pkgs.zoxide
             pkgs.tldr
             pkgs.imagemagick
             pkgs.zip

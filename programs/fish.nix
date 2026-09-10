@@ -23,6 +23,17 @@
                 };
             };
 
+            configFile = {
+                content = "
+                    if status is-interactive
+                        starship init fish | source
+                        zoxide init fish | source
+                    end
+
+                    set -gx PATH $PATH /home/mats/.lmstudio/bin
+                    ";
+            };
+
             plugins = with pkgs.fishPlugins; [
                 fzf-fish
                 grc
