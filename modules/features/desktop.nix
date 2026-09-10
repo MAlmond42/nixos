@@ -19,6 +19,7 @@
             systemPackages = [
                 self.packages.${pkgs.stdenv.hostPlatform.system}.terminal
                 pkgs.pcmanfm
+                pkgs.polkit_gnome
             ];
 
             variables.EDITOR = "nvim";
