@@ -20,11 +20,17 @@
 
                 spawn-sh-at-startup = ["noctalia"]; #lib.getExe pkgs.noctalia
 
+                environment = {
+                    GTK_IM_MODULE = "ibus";
+                    QT_IM_MODULE = "ibus";
+                    XMODIFIERS = "@im=ibus";
+                };
+
                 input = {
                     keyboard = {
                         xkb = {
                             layout = "de";
-                            options = "altwin:swap_lalt_lwin";
+                            options = "altwin:swap_lalt_lwin,caps:escape_shifted_capslock";
                         };
 
                         repeat-delay = 300;

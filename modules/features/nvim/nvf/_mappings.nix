@@ -13,6 +13,33 @@
                 silent = true;
                 action = "<Nop>";
             }
+            {
+                key = "<Up>";
+                mode = ["n" "v" "c" "i"];
+                silent = true;
+                action = "<Nop>";
+            }
+            {
+                key = "<Down>";
+                mode = ["n" "v" "c" "i"];
+                silent = true;
+                action = "<Nop>";
+            }
+            {
+                key = "<Left>";
+                mode = ["n" "v" "c" "i"];
+                silent = true;
+                action = "<Nop>";
+            }
+            {
+                key = "<Right>";
+                mode = ["n" "v" "c" "i"];
+                silent = true;
+                action = "<Nop>";
+            }
+
+
+
         ];
         options = {
             tabstop = 4;
