@@ -1,43 +1,44 @@
 {
-    description = "Dendritic Nix-Flake";
+  description = "Dendritic Nix-Flake";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-        flake-parts.url = "github:hercules-ci/flake-parts";
-        import-tree.url = "github:vic/import-tree";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
-        wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
-        home-manager = {
-            url = "github:nix-community/home-manager";
-        };
-
-        nvf = {
-            url = "github:NotAShelf/nvf";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        stylix.url = "github:nix-community/stylix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
     };
 
-    outputs = inputs: let
-        inherit (inputs.nixpkgs) lib;
-        inherit (lib.fileset) toList fileFilter;
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-        isNixModule = file:
-            file.hasExt "nix"
-            && file.name != "flake.nix"
-            && !lib.hasPrefix "_" file.name;
+    stylix.url = "github:nix-community/stylix";
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+  };
 
-        importTree = path:
-            toList (fileFilter isNixModule path);
+  outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
+    inherit (lib.fileset) toList fileFilter;
 
-        mkFlake = inputs.flake-parts.lib.mkFlake {
-            inherit inputs;
-        };
-    in
-        mkFlake {
-            imports = importTree ./.;
-        };
+    isNixModule = file:
+      file.hasExt "nix"
+      && file.name != "flake.nix"
+      && !lib.hasPrefix "_" file.name;
+
+    importTree = path:
+      toList (fileFilter isNixModule path);
+
+    mkFlake = inputs.flake-parts.lib.mkFlake {
+      inherit inputs;
+    };
+  in
+    mkFlake {
+      imports = importTree ./.;
+    };
 }

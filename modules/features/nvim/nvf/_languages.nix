@@ -3,7 +3,7 @@
         lsp = {
             enable = true;
             inlayHints.enable = true;
-            #formatOnSave = true;
+            formatOnSave = true;
             presets = {
                 tailwindcss-language-server.enable = true;
             };

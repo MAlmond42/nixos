@@ -1,96 +1,96 @@
 {
-self,
-inputs,
-...
+  self,
+  inputs,
+  ...
 }: {
-    flake.nixosConfigurations.nixon = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-            self.nixosModules.nixonConfiguration
-        ];
+  flake.nixosConfigurations.nixon = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.nixonConfiguration
+    ];
+  };
+
+  flake.nixosModules.nixonConfiguration = {
+    pkgs,
+    lib,
+    ...
+  }: {
+    imports = [
+      self.nixosModules.desktop
+      self.nixosModules.gaming
+      self.nixosModules.apps
+      self.nixosModules.fun
+      self.nixosModules.affinity
+
+      self.nixosModules.mats
+
+      self.nixosModules.homeManager
+    ];
+
+    nix.settings.experimental-features = ["nix-command" "flakes"];
+
+    nixpkgs.config.allowUnfree = true;
+
+    boot = {
+      kernelPackages = pkgs.linuxPackages_latest;
+
+      loader = {
+        grub = {
+          enable = true;
+          efiSupport = true;
+          device = "nodev";
+        };
+        efi = {
+          canTouchEfiVariables = true;
+        };
+      };
+
+      kernelParams = ["quiet" "splash"];
+      kernelModules = ["mt7921e"];
+
+      plymouth.enable = true;
     };
 
-    flake.nixosModules.nixonConfiguration = {
-        pkgs,
-        lib,
-        ...
-        }: {
-            imports = [
-                self.nixosModules.desktop
-                self.nixosModules.gaming
-                self.nixosModules.apps
-                self.nixosModules.fun
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 4 * 1024; # 4 GiB
+      }
+    ];
 
-                self.nixosModules.mats
+    networking = {
+      hostName = "nixon";
+      networkmanager.enable = true;
 
-                self.nixosModules.homeManager
-            ];
+      firewall = {
+        enable = true;
+        # allowedTCPPorts = [5173];
+      };
+    };
 
-            nix.settings.experimental-features = ["nix-command" "flakes"];
+    services = {
+      flatpak.enable = true;
+      udisks2.enable = true;
+      printing.enable = true;
+      displayManager.lemurs.enable = true;
+      tlp = {
+        enable = true;
+        pd.enable = true;
+      };
+    };
 
-            nixpkgs.config.allowUnfree = true;
+    hardware = {
+      graphics = {
+        enable = true;
+        enable32Bit = true;
+      };
+      amdgpu.opencl.enable = true;
+    };
 
-            boot = {
-                kernelPackages = pkgs.linuxPackages_latest;
+    xdg.portal = {
+      enable = true;
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    };
 
-                loader = {
-                    grub = {
-                        enable = true;
-                        efiSupport = true;
-                        device = "nodev";
-                    };
-                    efi = {
-                        canTouchEfiVariables = true;
-                    };
-                };
-
-                kernelParams = ["quiet" "splash"];
-                kernelModules = ["mt7921e"];
-
-                plymouth.enable = true;
-            };
-
-            swapDevices = [
-                {
-                    device = "/var/lib/swapfile";
-                    size = 4 * 1024; # 4 GiB
-                }
-            ];
-
-
-            networking = {
-                hostName = "nixon";
-                networkmanager.enable = true;
-
-                firewall = {
-                    enable = true;
-                    # allowedTCPPorts = [5173];
-                };
-            };
-
-            services = {
-                flatpak.enable = true;
-                udisks2.enable = true;
-                printing.enable = true;
-                displayManager.lemurs.enable = true;
-                tlp = {
-                    enable = true;
-                    pd.enable = true;
-                };
-            };
-
-            hardware = {
-                graphics = {
-                    enable = true;
-                    enable32Bit = true;
-                };
-                amdgpu.opencl.enable = true;
-            };
-
-            xdg.portal = {
-                enable = true;
-                extraPortals = [pkgs.xdg-desktop-portal-gtk];
-            };
-
-            system.stateVersion = "25.11";
-        };
+    system.stateVersion = "25.11";
+  };
 }
