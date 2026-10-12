@@ -22,6 +22,13 @@
     affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
+  nixConfig = {
+    extra-substituters = ["https://cache.forall.systems"];
+    extra-trusted-public-keys = [
+      "cache.forall.systems:5PmD7QO4MSF8YgyRZtkSGXRDo96H3bybIf2SsQh8ScI="
+    ];
+  };
+
   outputs = inputs: let
     inherit (inputs.nixpkgs) lib;
     inherit (lib.fileset) toList fileFilter;
